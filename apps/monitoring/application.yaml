@@ -56,7 +56,7 @@ spec:
             enabled: false
           "grafana.ini":
             server:
-              root_url: "%(protocol)s://%(domain)s:%(http_port)s/grafana/"
+              root_url: "http://localhost:30080/grafana/"
               serve_from_sub_path: true
   destination:
     server: https://kubernetes.default.svc
