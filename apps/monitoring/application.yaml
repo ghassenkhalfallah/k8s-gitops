@@ -53,10 +53,11 @@ spec:
               cpu: 200m
               memory: 256Mi
           ingress:
-            enabled: true
-            ingressClassName: nginx
-            hosts:
-              - grafana.k8s.local
+            enabled: false
+          "grafana.ini":
+            server:
+              root_url: "%(protocol)s://%(domain)s:%(http_port)s/grafana/"
+              serve_from_sub_path: true
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
